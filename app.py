@@ -62,7 +62,8 @@ def carregar_perguntas():
 def get_gemini_descricao(carreira_codigo: str) -> str:
     descricao_base = DESCRICOES_BASE.get(carreira_codigo, "")
 
-    if not GEMINI_LIB_DISPONIVEL:
+    # Corrigido: GEMINI_OK
+    if not GEMINI_OK:
         return descricao_base
 
     api_key = None
