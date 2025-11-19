@@ -59,30 +59,48 @@ def carregar_perguntas():
     return data["perguntas"]
 
 
-def gerar_descricao_com_gemini(carreira, descricao_base):
-    genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    model = genai.GenerativeModel("gemini-1.5-flash")
+def get_gemini_descricao(carreira_codigo: str) -> str:
+    descricao_base = DESCRICOES_BASE.get(carreira_codigo, "")
 
-    prompt = f"""
-    Você é um orientador vocacional especializado em carreiras jurídicas.
-    Explique de forma detalhada a carreira de {carreira} para um estudante de Direito.
+    if not GEMINI_LIB_DISPONIVEL:
+        return descricao_base
 
-    Regras:
-    - Texto claro, organizado e didático.
-    - Divida a resposta em 5 tópicos obrigatórios:
-        1. Visão geral da carreira
-        2. Principais atividades
+    api_key = None
+    try:
+        api_key = st.secrets.get("GEMINI_API_KEY")
+    except Exception:
+        api_key = None
+
+    if not api_key:
+        api_key = os.environ.get("GEMINI_API_KEY")
+
+    if not api_key:
+        return descricao_base
+
+    try:
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel("gemini-1.5-flash")
+
+        prompt = f"""
+        Você é um orientador vocacional jurídico.
+        Explique de forma detalhada a carreira de {CARREIRAS.get(carreira_codigo)}.
+        
+        Divida a resposta em:
+        1. Visão geral
+        2. Atividades típicas
         3. Habilidades necessárias
-        4. Perfil ideal do profissional
-        5. Maiores desafios do dia a dia
-    - Use exemplos reais.
-    - Expanda a seguinte descrição base:
-      '{descricao_base}'
-    - Escreva no português do Brasil.
-    """
+        4. Perfil ideal
+        5. Desafios da carreira
+        
+        Texto base para expandir:
+        '{descricao_base}'
+        """
 
-    resposta = model.generate_content(prompt)
-    return resposta.text.strip()
+        resposta = model.generate_content(prompt)
+        return resposta.text.strip()
+
+    except Exception:
+        return descricao_base
 
 
 def calcular_resultados(respostas):
