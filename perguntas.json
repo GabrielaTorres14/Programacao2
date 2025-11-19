@@ -1,0 +1,104 @@
+{
+  "perguntas": [
+    {
+      "id": "p1",
+      "texto": "O que mais te atrai no exercício do Direito?",
+      "opcoes": {
+        "a": { "texto": "Defender diretamente os interesses de clientes.", "carreira": "advocacia" },
+        "b": { "texto": "Decidir conflitos com imparcialidade.", "carreira": "magistratura" },
+        "c": { "texto": "Proteger a sociedade e fiscalizar o cumprimento das leis.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Analisar cenários e prevenir problemas jurídicos.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p2",
+      "texto": "Qual tipo de rotina você prefere?",
+      "opcoes": {
+        "a": { "texto": "Agenda dinâmica, negociações e contato constante com clientes.", "carreira": "advocacia" },
+        "b": { "texto": "Ambiente organizado e decisões fundamentadas diariamente.", "carreira": "magistratura" },
+        "c": { "texto": "Atuação firme, investigação e enfrentamento de conflitos sociais.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Análises técnicas e orientação contínua a empresas.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p3",
+      "texto": "Qual habilidade você considera sua maior força?",
+      "opcoes": {
+        "a": { "texto": "Argumentação e persuasão.", "carreira": "advocacia" },
+        "b": { "texto": "Equilíbrio emocional e senso de justiça.", "carreira": "magistratura" },
+        "c": { "texto": "Compromisso com o interesse público.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Raciocínio estratégico e visão preventiva.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p4",
+      "texto": "Que tipo de responsabilidade você prefere assumir?",
+      "opcoes": {
+        "a": { "texto": "Representar e defender clientes em processos.", "carreira": "advocacia" },
+        "b": { "texto": "Tomar decisões finais que definem destinos jurídicos.", "carreira": "magistratura" },
+        "c": { "texto": "Atuar em nome da sociedade e combater ilegalidades.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Orientar empresas para evitar riscos.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p5",
+      "texto": "Como você lida com pressão?",
+      "opcoes": {
+        "a": { "texto": "Consigo reagir rápido e negociar soluções.", "carreira": "advocacia" },
+        "b": { "texto": "Mantenho calma e analiso de forma técnica.", "carreira": "magistratura" },
+        "c": { "texto": "Uso a pressão como motivação para agir pela justiça.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Prefiro trabalhar com planejamento e análises prévias.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p6",
+      "texto": "O que você busca em uma carreira jurídica?",
+      "opcoes": {
+        "a": { "texto": "Contato humano e defesa de interesses individuais.", "carreira": "advocacia" },
+        "b": { "texto": "Respeito institucional e estabilidade.", "carreira": "magistratura" },
+        "c": { "texto": "Impacto social e promoção da justiça.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Atuação técnica e foco empresarial.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p7",
+      "texto": "Que tipo de desafio te motiva mais?",
+      "opcoes": {
+        "a": { "texto": "Convencer, negociar e resolver conflitos individuais.", "carreira": "advocacia" },
+        "b": { "texto": "Analisar provas e aplicar corretamente a lei.", "carreira": "magistratura" },
+        "c": { "texto": "Combater irregularidades e defender direitos coletivos.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Interpretar cenários e propor soluções preventivas.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p8",
+      "texto": "Como você prefere trabalhar?",
+      "opcoes": {
+        "a": { "texto": "Em casos específicos, com criatividade jurídica.", "carreira": "advocacia" },
+        "b": { "texto": "De forma imparcial, aplicando técnica e equilíbrio.", "carreira": "magistratura" },
+        "c": { "texto": "Com foco no interesse público, fiscalizando e investigando.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Em empresas, auxiliando no planejamento jurídico.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p9",
+      "texto": "O que você acredita que mais combina com seu futuro jurídico?",
+      "opcoes": {
+        "a": { "texto": "Atuar em defesa de clientes e causas específicas.", "carreira": "advocacia" },
+        "b": { "texto": "Servir como referência de imparcialidade.", "carreira": "magistratura" },
+        "c": { "texto": "Promover justiça e enfrentar irregularidades.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Construir estratégias jurídicas de longo prazo.", "carreira": "consultoria" }
+      }
+    },
+    {
+      "id": "p10",
+      "texto": "Qual ambiente te agrada mais?",
+      "opcoes": {
+        "a": { "texto": "Escritórios, audiências e contato direto.", "carreira": "advocacia" },
+        "b": { "texto": "Gabinete organizado e decisões formais.", "carreira": "magistratura" },
+        "c": { "texto": "Ambiente dinâmico, fiscalizações e investigações.", "carreira": "ministerio_publico" },
+        "d": { "texto": "Ambiente corporativo e análises preventivas.", "carreira": "consultoria" }
+      }
+    }
+  ]
+}
