@@ -59,42 +59,30 @@ def carregar_perguntas():
     return data["perguntas"]
 
 
-def get_gemini_descricao(carreira_codigo: str) -> str:
-    """Gera descrição com Gemini; se falhar, usa base."""
-    base = DESCRICOES_BASE.get(carreira_codigo, "")
+def gerar_descricao_com_gemini(carreira, descricao_base):
+    genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+    model = genai.GenerativeModel("gemini-1.5-flash")
 
-    if not GEMINI_OK:
-        return base
+    prompt = f"""
+    Você é um orientador vocacional especializado em carreiras jurídicas.
+    Explique de forma detalhada a carreira de {carreira} para um estudante de Direito.
 
-    api_key = (
-        st.secrets.get("GEMINI_API_KEY")
-        if "GEMINI_API_KEY" in st.secrets
-        else os.environ.get("GEMINI_API_KEY")
-    )
+    Regras:
+    - Texto claro, organizado e didático.
+    - Divida a resposta em 5 tópicos obrigatórios:
+        1. Visão geral da carreira
+        2. Principais atividades
+        3. Habilidades necessárias
+        4. Perfil ideal do profissional
+        5. Maiores desafios do dia a dia
+    - Use exemplos reais.
+    - Expanda a seguinte descrição base:
+      '{descricao_base}'
+    - Escreva no português do Brasil.
+    """
 
-    if not api_key:
-        return base
-
-    try:
-        genai.configure(api_key=api_key)
-    except Exception:
-        return base
-
-    carreira_nome = CARREIRAS.get(carreira_codigo, carreira_codigo)
-
-    prompt = (
-        f"Explique a carreira de {carreira_nome} para um estudante de Direito. "
-        f"Baseie-se no texto: {base}. "
-        "Estruture em: visão geral; atividades; habilidades importantes; perfil ideal; desafios."
-    )
-
-    try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        resposta = model.generate_content(prompt)
-        texto = resposta.text
-        return texto.strip()
-    except Exception:
-        return base
+    resposta = model.generate_content(prompt)
+    return resposta.text.strip()
 
 
 def calcular_resultados(respostas):
